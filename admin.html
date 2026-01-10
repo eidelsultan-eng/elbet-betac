@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | البيت بيتك للأثاث</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="admin-body">
+    <div class="container">
+        <header class="admin-header">
+            <div class="admin-logo">
+                <span class="logo-text">لوحة <span>التحكم</span></span>
+            </div>
+            <div class="admin-actions">
+                <button onclick="clearOrders()" class="btn btn-secondary" style="background: #ff4757; color: white;">مسح
+                    الطلبات</button>
+                <a href="index.html" class="btn btn-primary">العودة للمتجر</a>
+            </div>
+        </header>
+
+        <section class="admin-orders">
+            <div class="section-title">
+                <h2>أحدث الطلبات</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div id="ordersList" class="orders-list">
+                <!-- Orders will be injected here -->
+            </div>
+        </section>
+
+        <section class="admin-messages" style="margin-top: 4rem;">
+            <div class="section-title">
+                <h2>رسائل العملاء</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div id="messagesList" class="orders-list">
+                <!-- Messages will be injected here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

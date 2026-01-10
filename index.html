@@ -32,10 +32,6 @@
                 <li><a href="#contact">اتصل بنا</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="https://wa.me/+201234567890" target="_blank" class="cta-whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>تواصل معنا</span>
-                </a>
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -126,9 +122,9 @@
                         <span class="product-cat">غرف معيشة</span>
                         <h3 class="product-title">كنبة مخملية راقية - زمردي</h3>
                         <div class="product-price">12,500 ج.م</div>
-                        <a href="https://wa.me/+201234567890?text=استفسار عن كنبة مخملية راقية" class="btn-buy">
-                            <i class="fab fa-whatsapp"></i> اطلب الآن
-                        </a>
+                        <button class="btn-buy" data-product="كنبة مخملية راقية - زمردي" data-price="12,500 ج.م">
+                            اطلب الآن
+                        </button>
                     </div>
                 </div>
 
@@ -141,9 +137,9 @@
                         <span class="product-cat">مكاتب</span>
                         <h3 class="product-title">مكتب خشبي عصري مع وحدات تخزين</h3>
                         <div class="product-price">4,800 ج.م</div>
-                        <a href="https://wa.me/+201234567890?text=استفسار عن مكتب خشبي عصري" class="btn-buy">
-                            <i class="fab fa-whatsapp"></i> اطلب الآن
-                        </a>
+                        <button class="btn-buy" data-product="مكتب خشبي عصري مع وحدات تخزين" data-price="4,800 ج.م">
+                            اطلب الآن
+                        </button>
                     </div>
                 </div>
 
@@ -156,9 +152,9 @@
                         <span class="product-cat">طاولات طعام</span>
                         <h3 class="product-title">طاولة طعام ملكية - 6 كراسي</h3>
                         <div class="product-price">18,000 ج.م</div>
-                        <a href="https://wa.me/+201234567890?text=استفسار عن طاولة طعام ملكية" class="btn-buy">
-                            <i class="fab fa-whatsapp"></i> اطلب الآن
-                        </a>
+                        <button class="btn-buy" data-product="طاولة طعام ملكية - 6 كراسي" data-price="18,000 ج.م">
+                            اطلب الآن
+                        </button>
                     </div>
                 </div>
             </div>
@@ -223,10 +219,17 @@
                         <input type="text" placeholder="الاسم بالكامل" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <input type="tel" placeholder="رقم الهاتف" required>
                     </div>
                     <div class="form-group">
                         <textarea placeholder="رسالتك أو استفسارك" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactImage" class="file-label">
+                            <i class="fas fa-image"></i> إرفاق صورة (اختياري)
+                        </label>
+                        <input type="file" id="contactImage" accept="image/*" class="file-input">
+                        <div id="contactImagePreview" class="image-preview"></div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
                 </form>
@@ -260,10 +263,47 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة &copy; 2026 البيت بيتك للأثاث</p>
+                <p>جميع الحقوق محفوظة &copy; 2026 البيت بيتك للأثاث | <a href="admin.html" class="admin-link">لوحة
+                        التحكم</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>تأكيد الطلب</h2>
+                <div class="product-summary">
+                    <p id="modalProductName"></p>
+                    <p id="modalProductPrice" class="highlight"></p>
+                </div>
+            </div>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label>الاسم بالكامل</label>
+                    <input type="text" id="custName" required placeholder="أدخل اسمك بالكامل">
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <input type="tel" id="custPhone" required placeholder="أدخل رقم هاتفك">
+                </div>
+                <div class="form-group">
+                    <label>العنوان بالتفصيل</label>
+                    <textarea id="custAddress" required placeholder="أدخل عنوان التوصيل بالتفصيل"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="file-label" for="custImage">
+                        <i class="fas fa-camera"></i> إرفاق صورة للمكان أو تصميم خاص (اختياري)
+                    </label>
+                    <input type="file" id="custImage" accept="image/*" class="file-input">
+                    <div id="orderImagePreview" class="image-preview"></div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">تأكيد واطلب عبر واتساب</button>
+            </form>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>

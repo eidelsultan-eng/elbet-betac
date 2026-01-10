@@ -773,3 +773,252 @@ img {
         border-radius: 50%;
     }
 }
+
+/* --- Added for Admin & Order Modal --- */
+
+/* Admin Link in Footer */
+.admin-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.admin-link:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: var(--white);
+    margin: 5% auto;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: modalScale 0.3s ease-out;
+}
+
+@keyframes modalScale {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.modal-header h2 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.product-summary {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 12px;
+    border-right: 4px solid var(--primary-color);
+}
+
+.product-summary p {
+    margin: 0.2rem 0;
+    font-weight: 600;
+}
+
+.modal #orderForm .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.modal #orderForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.modal #orderForm input,
+.modal #orderForm textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.modal #orderForm input:focus,
+.modal #orderForm textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+}
+
+/* Admin Dashboard Styles */
+.admin-body {
+    background: #f0f2f5 !important;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.orders-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.order-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-right: 5px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.order-info h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.cust-details p {
+    margin: 0.3rem 0;
+    color: var(--text-muted);
+}
+
+/* --- Image Upload Styles --- */
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: block;
+    padding: 12px 20px;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition);
+    margin-bottom: 10px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.file-label:hover {
+    background: #e8e8e8;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.file-label i {
+    margin-left: 8px;
+    font-size: 1.2rem;
+}
+
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-order-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 2px solid var(--secondary-color);
+    cursor: zoom-in;
+}
+
+/* Media query fixes for new styles */
+@media (max-width: 768px) {
+    .admin-order-img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+.cust-details span {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.order-meta {
+    text-align: left;
+}
+
+.order-date {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 3rem;
+    background: var(--white);
+    border-radius: 15px;
+    color: var(--text-muted);
+}
