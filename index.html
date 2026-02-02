@@ -4,309 +4,392 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>البيت بيتك للأثاث | El Bet Betak Furniture</title>
+    <title>منصة الأستاذ أحمد جمال رضوان | رياضيات</title>
     <meta name="description"
-        content="البيت بيتك للأثاث والمكاتب المنزلية - أفضل تشكيلة من الأثاث العصري والراقي لمنزلك ومكتبك.">
-    <link rel="stylesheet" href="style.css">
+        content="المنصة التعليمية الشاملة للرياضيات مع الأستاذ أحمد جمال رضوان. تفوق في الرياضيات بأسلوب عصري ومبسط.">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Tajawal:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-wrapper">
+        <div class="math-loader">
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-minus"></i>
+            <i class="fas fa-times"></i>
+            <i class="fas fa-divide"></i>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
+    <nav id="main-nav">
+        <div class="nav-container">
             <div class="logo">
-                <span class="logo-text">البيت <span>بيتك</span></span>
+                <div class="logo-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <span>أحمد جمال رضوان</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">الرئيسية</a></li>
-                <li><a href="#categories">الأقسام</a></li>
-                <li><a href="#products">المنتجات</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#contact">اتصل بنا</a></li>
+                <li><a href="#about">عن الأستاذ</a></li>
+                <li><a href="#grades">المراحل التعليمية</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
             </ul>
             <div class="nav-actions">
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="btn-primary" onclick="scrollToGrades()">ابدأ الآن</button>
             </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <span class="hero-badge">تشكيلة 2026 الجديدة</span>
-                <h1>اجعل منزلك يعكس <br><span class="highlight">فخامة ذوقك</span></h1>
-                <p>نقدم لك أرقى أنواع الأثاث المنزلي والمكتبي الذي يجمع بين الراحة، المتانة، والتصميم العصري المبتكر.
-                </p>
-                <div class="hero-btns">
-                    <a href="#products" class="btn btn-primary">تسوق الآن</a>
-                    <a href="#about" class="btn btn-secondary">اكتشف المزيد</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section id="categories" class="categories">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>أقسامنا المميزة</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="categories-grid">
-                <div class="category-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="cat-img">
-                        <img src="elegant_sofa.png" alt="أثاث غرف المعيشة">
-                    </div>
-                    <div class="cat-info">
-                        <h3>غرف المعيشة</h3>
-                        <p>تصاميم عصرية للراحة والاسترخاء</p>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="badge">نحو القمة في الرياضيات</div>
+                    <h1><span class="gradient-text">الدحيح</span> في مادة الرياضيات</h1>
+                    <p>منصة الأستاذ أحمد جمال رضوان التعليمية - لتبسيط مفاهيم الرياضيات وكافة فروعها لطلاب الإعدادية
+                        والثانوية.</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary btn-lg" onclick="scrollToGrades()">اختر مرحلتك التعليمية</button>
+                        <button class="btn-outline btn-lg" onclick="openIntroVideo()"><i class="fas fa-play"></i> فيديو
+                            تعريفي</button>
                     </div>
                 </div>
-                <div class="category-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="cat-img">
-                        <img src="home_office_desk.png" alt="مكاتب منزلية">
-                    </div>
-                    <div class="cat-info">
-                        <h3>مكاتب منزلية</h3>
-                        <p>بيئة عمل مثالية داخل منزلك</p>
-                    </div>
-                </div>
-                <div class="category-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="cat-img">
-                        <img src="dining_table.png" alt="غرف الطعام">
-                    </div>
-                    <div class="cat-info">
-                        <h3>غرف الطعام</h3>
-                        <p>اجلس مع عائلتك في أجواء ملكية</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section id="products" class="products">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>أحدث المنتجات</h2>
-                <div class="title-line"></div>
-                <p>اختر ما يناسبك من تشكيلتنا المختارة بعناية</p>
-            </div>
-
-            <div class="product-filters" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">الكل</button>
-                <button class="filter-btn" data-filter="living">غرف المعيشة</button>
-                <button class="filter-btn" data-filter="office">مكاتب</button>
-                <button class="filter-btn" data-filter="dining">طاولات طعام</button>
-            </div>
-
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card" data-category="living" data-aos="fade-up">
-                    <div class="product-img">
-                        <img src="elegant_sofa.png" alt="كنبة مخملية راقية">
-                        <div class="product-badge">جديد</div>
-                    </div>
-                    <div class="product-details">
-                        <span class="product-cat">غرف معيشة</span>
-                        <h3 class="product-title">كنبة مخملية راقية - زمردي</h3>
-                        <div class="product-price">12,500 ج.م</div>
-                        <button class="btn-buy" data-product="كنبة مخملية راقية - زمردي" data-price="12,500 ج.م">
-                            اطلب الآن
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="product-card" data-category="office" data-aos="fade-up" data-aos-delay="100">
-                    <div class="product-img">
-                        <img src="home_office_desk.png" alt="مكتب خشبي عصري">
-                    </div>
-                    <div class="product-details">
-                        <span class="product-cat">مكاتب</span>
-                        <h3 class="product-title">مكتب خشبي عصري مع وحدات تخزين</h3>
-                        <div class="product-price">4,800 ج.م</div>
-                        <button class="btn-buy" data-product="مكتب خشبي عصري مع وحدات تخزين" data-price="4,800 ج.م">
-                            اطلب الآن
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card" data-category="dining" data-aos="fade-up" data-aos-delay="200">
-                    <div class="product-img">
-                        <img src="dining_table.png" alt="طاولة طعام ملكية">
-                    </div>
-                    <div class="product-details">
-                        <span class="product-cat">طاولات طعام</span>
-                        <h3 class="product-title">طاولة طعام ملكية - 6 كراسي</h3>
-                        <div class="product-price">18,000 ج.م</div>
-                        <button class="btn-buy" data-product="طاولة طعام ملكية - 6 كراسي" data-price="18,000 ج.م">
-                            اطلب الآن
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-flex">
-                <div class="about-content" data-aos="fade-left">
-                    <h2>لماذا تختار <span>البيت بيتك؟</span></h2>
-                    <p>في "البيت بيتك"، نؤمن أن الأثاث ليس مجرد قطع خشبية، بل هو روح المكان وتعبير عن شخصية أصحابه. منذ
-                        انطلاقتنا، وضعنا الجودة والابتكار نصب أعيننا لنقدم لعملائنا تجربة استثنائية في تأثيث منازلهم
-                        ومكاتبهم.</p>
-                    <div class="features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>أجود أنواع الأخشاب الطبيعية</span>
+                <div class="hero-visual">
+                    <div class="math-card">
+                        <div class="card-glass">
+                            <i class="fas fa-square-root-variable"></i>
+                            <span>Math Expert</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>تصاميم حصرية تناسب كافة الأذواق</span>
+                    </div>
+                    <div class="floating-icons">
+                        <i class="fas fa-theta floating" style="--d: 1s; --x: 20%; --y: 10%;"></i>
+                        <i class="fas fa-pi floating" style="--d: 2s; --x: 80%; --y: 30%;"></i>
+                        <i class="fas fa-superscript floating" style="--d: 3s; --x: 10%; --y: 70%;"></i>
+                        <i class="fas fa-function floating" style="--d: 4s; --x: 70%; --y: 80%;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-wrapper">
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <i class="fas fa-user-graduate"></i>
+                            <div class="experience-badge">
+                                <span>+10</span>
+                                <p>سنوات خبرة</p>
+                            </div>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>ضمان حقيقي وخدمة ما بعد البيع</span>
+                    </div>
+                    <div class="about-text">
+                        <div class="badge">من هو الدحيح؟</div>
+                        <h2>الأستاذ <span class="gradient-text">أحمد جمال رضوان</span></h2>
+                        <h3>خبير مادة الرياضيات للمرحلة الإعدادية والثانوية</h3>
+                        <p>بخبرة تمتد لسنوات في تدريس مادة الرياضيات، استطاع الأستاذ أحمد جمال رضوان بناء منهجية تعليمية
+                            فريدة تركز على الفهم العميق قبل الحفظ. نهدف إلى جعل الرياضيات المادة الأمتع والأسهل في رحلتك
+                            الدراسية.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <h4>99%</h4>
+                                <p>نسبة النجاح</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>+2000</h4>
+                                <p>طالب متفوق</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>100</h4>
+                                <p>دروس مصورة</p>
+                            </div>
+                        </div>
+
+                        <div class="features-list">
+                            <div class="feature-line">
+                                <i class="fas fa-star"></i>
+                                <span>شرح مبسط يجمع بين التأسيس والتميز.</span>
+                            </div>
+                            <div class="feature-line">
+                                <i class="fas fa-star"></i>
+                                <span>نظام تقييم مستمر واختبارات تحاكي النظام الجديد.</span>
+                            </div>
+                            <div class="feature-line">
+                                <i class="fas fa-star"></i>
+                                <span>متابعة خاصة لكل طالب لضمان أعلى الدرجات.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image" data-aos="fade-right">
-                    <img src="hero_furniture.png" alt="عن البيت بيتك">
+            </div>
+        </section>
+
+        <!-- Grade Selection Section -->
+        <section id="grades" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>اختر مرحلتك التعليمية</h2>
+                    <p>نقدم محتوى متخصص لكل مرحلة دراسية لضمان أقصى استفادة</p>
+                </div>
+                <div class="grades-grid">
+                    <div class="grade-card" onclick="selectGrade('3mid')">
+                        <div class="grade-icon"><i class="fas fa-school"></i></div>
+                        <h3>الصف الثالث الإعدادي</h3>
+                        <p>تأسيس متين للثانوية العامة</p>
+                        <button class="btn-card">دخول <i class="fas fa-arrow-left"></i></button>
+                    </div>
+                    <div class="grade-card" onclick="selectGrade('1sec')">
+                        <div class="grade-icon"><i class="fas fa-1"></i></div>
+                        <h3>الصف الأول الثانوي</h3>
+                        <p>بناء المفاهيم المتقدمة</p>
+                        <button class="btn-card">دخول <i class="fas fa-arrow-left"></i></button>
+                    </div>
+                    <div class="grade-card" onclick="selectGrade('2sec')">
+                        <div class="grade-icon"><i class="fas fa-2"></i></div>
+                        <h3>الصف الثاني الثانوي</h3>
+                        <p>تعميق المهارات الرياضية</p>
+                        <button class="btn-card">دخول <i class="fas fa-arrow-left"></i></button>
+                    </div>
+                    <div class="grade-card" onclick="selectGrade('3sec')">
+                        <div class="grade-icon"><i class="fas fa-3"></i></div>
+                        <h3>الصف الثالث الثانوي</h3>
+                        <p>الطريق إلى كليات القمة</p>
+                        <button class="btn-card">دخول <i class="fas fa-arrow-left"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-box" data-aos="zoom-in">
-                <div class="contact-info">
-                    <h2>تواصل معنا اليوم</h2>
-                    <p>نحن هنا لمساعدتك في اختيار الأثاث المثالي لمنزلك</p>
-                    <div class="info-items">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>القاهرة، مدينة نصر، شارع عباس العقاد</span>
+        <!-- Dynamic Content Section (Initially Hidden) -->
+        <section id="content-display" class="section hidden">
+            <div class="container">
+                <div class="content-header">
+                    <button class="btn-back" onclick="goBackToGrades()"><i class="fas fa-arrow-right"></i>
+                        العودة</button>
+                    <h2 id="current-grade-title">اسم المرحلة</h2>
+                </div>
+
+                <!-- Group Selection Overlay (Appears after grade selection) -->
+                <div id="group-selection" class="group-overlay hidden">
+                    <div class="overlay-content">
+                        <h3>اختر مجموعتك</h3>
+                        <div id="groups-list" class="groups-grid">
+                            <!-- Dynamic Groups -->
                         </div>
-                        <div class="info-item">
+                    </div>
+                </div>
+
+                <!-- Lessons & Exams Tabs -->
+                <div class="content-tabs">
+                    <button class="tab-btn active" data-tab="lessons">الدروس المرئية</button>
+                    <button class="tab-btn" data-tab="exams">الاختبارات</button>
+                    <button class="tab-btn" data-tab="files">المذكرات والملفات</button>
+                </div>
+
+                <div id="lessons-tab" class="tab-content active">
+                    <div id="lessons-list" class="items-grid">
+                        <!-- Dynamic Lessons -->
+                    </div>
+                </div>
+
+                <div id="exams-tab" class="tab-content">
+                    <div id="exams-list" class="items-grid">
+                        <!-- Dynamic Exams -->
+                    </div>
+                </div>
+
+                <div id="files-tab" class="tab-content">
+                    <div id="files-list" class="items-grid">
+                        <!-- Dynamic Files -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>تواصل معنا</h2>
+                    <p>نحن هنا للرد على استفساراتكم ومساعدتكم في أي وقت</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info-cards">
+                        <div class="info-card">
                             <i class="fas fa-phone"></i>
-                            <span>0123 456 7890</span>
+                            <h4>اتصل بنا</h4>
+                            <p>01204767017</p>
+                            <a href="tel:01204767017" class="btn-link">اتصل الآن</a>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@elbetbetak.com</span>
+                        <div class="info-card">
+                            <i class="fab fa-whatsapp"></i>
+                            <h4>واتساب</h4>
+                            <p>مراسلة فورية</p>
+                            <a href="https://wa.me/201204767017" target="_blank" class="btn-link">فتح المحادثة</a>
                         </div>
+                        <div class="info-card">
+                            <i class="fas fa-comment-sms"></i>
+                            <h4>رسائل SMS</h4>
+                            <p>ارسل استفسارك</p>
+                            <a href="sms:01204767017" class="btn-link">ارسال رسالة</a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container glass">
+                        <form id="contact-form" onsubmit="sendWhatsAppMessage(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>الاسم بالكامل</label>
+                                    <input type="text" id="contact-name" placeholder="أدخل اسمك" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>رقم الهاتف</label>
+                                    <input type="tel" id="contact-phone" placeholder="012XXXXXXXX" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>المرحلة الدراسية</label>
+                                <select id="contact-grade" required>
+                                    <option value="" disabled selected>اختر المرحلة</option>
+                                    <option value="الثالث الإعدادي">الصف الثالث الإعدادي</option>
+                                    <option value="الأول الثانوي">الصف الأول الثانوي</option>
+                                    <option value="الثاني الثانوي">الصف الثاني الثانوي</option>
+                                    <option value="الثالث الثانوي">الصف الثالث الثانوي</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>رسالتك</label>
+                                <textarea id="contact-message" placeholder="اكتب ما يدور في ذهنك هنا..."
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-100">إرسال عبر واتساب <i
+                                    class="fab fa-whatsapp"></i></button>
+                        </form>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="الاسم بالكامل" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="رقم الهاتف" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="رسالتك أو استفسارك" rows="5" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactImage" class="file-label">
-                            <i class="fas fa-image"></i> إرفاق صورة (اختياري)
-                        </label>
-                        <input type="file" id="contactImage" accept="image/*" class="file-input">
-                        <div id="contactImagePreview" class="image-preview"></div>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
-                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <h2>دخول المسؤول</h2>
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" id="admin-password" placeholder="••••••••">
+            </div>
+            <button id="login-confirm" class="btn-primary w-100">دخول</button>
+        </div>
+    </div>
+
+    <!-- Intro Video Modal -->
+    <div id="intro-modal" class="modal">
+        <div class="modal-content video-modal-content glass">
+            <span class="close-modal" onclick="closeIntroVideo()">&times;</span>
+            <div class="video-container-wrapper">
+                <iframe id="intro-video-iframe" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <div class="video-overlay-shield"></div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Admin Dashboard (Overlay) -->
+    <div id="admin-dashboard" class="admin-overlay hidden">
+        <div class="admin-container">
+            <div class="admin-sidebar">
+                <div class="admin-logo">لوحة التحكم</div>
+                <ul class="admin-nav">
+                    <li class="active" data-section="add-lesson">إضافة درس</li>
+                    <li data-section="add-exam">إضافة اختبار</li>
+                    <li data-section="manage-groups">إدارة المجموعات</li>
+                    <li data-section="settings">الإعدادات</li>
+                </ul>
+                <button class="btn-logout" onclick="logout()">خروج</button>
+            </div>
+            <div class="admin-main">
+                <div id="add-lesson" class="admin-section active">
+                    <!-- Add Lesson Form -->
+                </div>
+                <!-- Other sections... -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
+                <div class="footer-info">
                     <div class="logo">
-                        <span class="logo-text">البيت <span>بيتك</span></span>
+                        <i class="fas fa-infinity"></i>
+                        <span>أحمد جمال رضوان</span>
                     </div>
-                    <p>أثاث يجمع بين الفن والراحة.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
+                    <p>نسخر التكنولوجيا لخدمة الطالب وتغيير نظرة الطلاب للرياضيات.</p>
                 </div>
                 <div class="footer-links">
                     <h3>روابط سريعة</h3>
                     <ul>
                         <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#categories">الأقسام</a></li>
-                        <li><a href="#products">المنتجات</a></li>
-                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#grades">المراحل التعليمية</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
                     </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>تابعنا</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/16wKXQnhRW/" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@mr.ahmedgamal4179" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@ahmed_gamal813" target="_blank"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/201204767017" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:01204767017" title="اتصل بنا"><i class="fas fa-phone"></i></a>
+                        <a href="sms:01204767017" title="ارسل رسالة"><i class="fas fa-comment-sms"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة &copy; 2026 البيت بيتك للأثاث | <a href="admin.html" class="admin-link">لوحة
-                        التحكم</a></p>
+                <p>&copy; 2026 جميع الحقوق محفوظة للأستاذ أحمد جمال رضوان</p>
+                <p>تصميم المهندس <span class="gradient-text">أحمد عمرو ابوالحاج</span> 01001352771 | <button
+                        id="admin-login-btn" class="btn-admin-link">لوحة التحكم</button></p>
             </div>
         </div>
     </footer>
 
-    <!-- Order Modal -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>تأكيد الطلب</h2>
-                <div class="product-summary">
-                    <p id="modalProductName"></p>
-                    <p id="modalProductPrice" class="highlight"></p>
-                </div>
-            </div>
-            <form id="orderForm">
-                <div class="form-group">
-                    <label>الاسم بالكامل</label>
-                    <input type="text" id="custName" required placeholder="أدخل اسمك بالكامل">
-                </div>
-                <div class="form-group">
-                    <label>رقم الهاتف</label>
-                    <input type="tel" id="custPhone" required placeholder="أدخل رقم هاتفك">
-                </div>
-                <div class="form-group">
-                    <label>العنوان بالتفصيل</label>
-                    <textarea id="custAddress" required placeholder="أدخل عنوان التوصيل بالتفصيل"></textarea>
-                </div>
-                <div class="form-group">
-                    <label class="file-label" for="custImage">
-                        <i class="fas fa-camera"></i> إرفاق صورة للمكان أو تصميم خاص (اختياري)
-                    </label>
-                    <input type="file" id="custImage" accept="image/*" class="file-input">
-                    <div id="orderImagePreview" class="image-preview"></div>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">تأكيد واطلب عبر واتساب</button>
-            </form>
-        </div>
-    </div>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
